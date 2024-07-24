@@ -1,0 +1,18 @@
+
+WINDOWS
+>docker build --tag "azp-agent:windows" --file "./azp-agent-windows.dockerfile" .
+
+LINUX
+$docker build --tag "azp-agent:linux" --file "./azp-agent-linux.dockerfile" .
+
+LINUX (Pasos para contruir la imágen y enviarla a docker hub)
+1- Crear repositorio en docker hub
+
+2- Loguearse en terminal hacía docker hub:
+	$docker login
+3- Construir la imagen con la información del repositorio y cuenta de docker hub:
+	$docker build --tag aportillo1988/azure-agent-image:latest --file "./azp-agent-linux.dockerfile" .
+4- Revisar imagen contruida
+	$docker images
+5- Enviar la imagen contruida a docker hub:
+	$docker push aportillo1988/azure-agent-image
