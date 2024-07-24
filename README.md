@@ -9,14 +9,14 @@ $echo -n 'axjhgheijnom5tuliujnuzbqobvy5dnalgdzqj7v3kpmhxyxefgq' | base64
 $YXhqaGdoZWlqbm9tNXR1bGl1am51emJxb2J2eTVkbmFsZ2R6cWo3djNrcG1oeHl4ZWZncQ==
 
 Quedando el secret de la siguiente forma:
-apiVersion: v1
-data:
-  AZP_POOL: T3BlbnNoaWZ0LUFnZW50 #Openshift-Agent
-  #AZP_KEY: axjhgheijnom5tuliujnuzbqobvy5dnalgdzqj7v3kpmhxyxefgq
-  AZP_TOKEN: YXhqaGdoZWlqbm9tNXR1bGl1am51emJxb2J2eTVkbmFsZ2R6cWo3djNrcG1oeHl4ZWZncQ== #axjhgheijnom5tuliujnuzbqobvy5dnalgdzqj7v3kpmhxyxefgq
-  AZP_URL: aHR0cHM6Ly9kZXYuYXp1cmUuY29tL2FsZXhwb3J0aWxsbzg4Lw== #https://dev.azure.com/alexportillo88/
-kind: Secret
-metadata:
-  name: azdevops
-  namespace: az-devops
-type: Opaque
+      apiVersion: v1
+      data:
+        AZP_POOL: T3BlbnNoaWZ0LUFnZW50 #Openshift-Agent
+        #AZP_KEY: axjhgheijnom5tuliujnuzbqobvy5dnalgdzqj7v3kpmhxyxefgq
+        AZP_TOKEN: YXhqaGdoZWlqbm9tNXR1bGl1am51emJxb2J2eTVkbmFsZ2R6cWo3djNrcG1oeHl4ZWZncQ== #axjhgheijnom5tuliujnuzbqobvy5dnalgdzqj7v3kpmhxyxefgq
+        AZP_URL: aHR0cHM6Ly9kZXYuYXp1cmUuY29tL2FsZXhwb3J0aWxsbzg4Lw== #https://dev.azure.com/alexportillo88/
+      kind: Secret
+      metadata:
+        name: azdevops
+        namespace: az-devops
+      type: Opaque
