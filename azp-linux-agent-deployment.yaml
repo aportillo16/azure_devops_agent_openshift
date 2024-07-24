@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azsh-linux
+  namespace: az-devops
+  labels:
+    app: azp-linux-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azp-linux-agent
+  template:
+    metadata:
+      labels:
+        app: azp-linux-agent
+    spec:
+      containers:
+      - name: kubepodcreation
+        image: aportillo1988/azure-agent-image:latest
+        env:
+          - name: AZP_URL
+            valueFrom:
+              secretKeyRef:
+                name: azdevops
+                key: AZP_URL
+          - name: AZP_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: azdevops
+                key: AZP_TOKEN
+          - name: AZP_POOL
+            valueFrom:
+              secretKeyRef:
+                name: azdevops
+                key: AZP_POOL
+#        volumeMounts:
+#        - mountPath: /var/run/docker.sock
+#          name: docker-volume
+#      volumes:
+#      - name: docker-volume
+#        hostPath:
+#          path: /var/run/docker.sock
